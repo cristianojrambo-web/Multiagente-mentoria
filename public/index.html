@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Boardroom - Mentoria Empresarial</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <h1>🏢 AI Boardroom</h1>
+      <p>Seu conselho executivo de inteligência artificial</p>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="problem-section">
+      <form id="boardroom-form">
+        <label for="problem-input" class="label">Descreva o problema ou desafio da sua empresa:</label>
+        <textarea
+          id="problem-input"
+          class="textarea"
+          rows="5"
+          placeholder="Ex: Nossas vendas caíram 30% no último trimestre e não sabemos se o problema está no produto, no preço ou na equipe comercial..."
+          required
+        ></textarea>
+        <button id="start-btn" type="submit" class="btn-primary">Iniciar Sessão</button>
+      </form>
+    </section>
+
+    <section id="phase-indicator" class="phase-indicator" style="display:none"></section>
+
+    <section id="boardroom" class="boardroom-grid"></section>
+
+    <section id="approval-section" class="approval-section" style="display:none">
+      <h2>👔 Decisão do Conselho</h2>
+      <p>O conselho concluíu a análise. Deseja implementar as recomendações apresentadas?</p>
+      <div class="approval-buttons">
+        <button id="approve-btn" class="btn-approve">✅ Aprovar Recomendações</button>
+        <button id="reject-btn" class="btn-reject">❌ Encerrar Sessão</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

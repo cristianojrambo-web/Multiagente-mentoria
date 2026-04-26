@@ -1,0 +1,243 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #0f1117;
+  color: #e8eaed;
+  min-height: 100vh;
+}
+
+.header {
+  background: linear-gradient(135deg, #1a1d2e 0%, #2c3e50 100%);
+  border-bottom: 1px solid #2d3748;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.problem-section {
+  background: #1e2130;
+  border: 1px solid #2d3748;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.label {
+  display: block;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.textarea {
+  width: 100%;
+  background: #0f1117;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  color: #e8eaed;
+  font-size: 0.95rem;
+  padding: 0.875rem;
+  resize: vertical;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.btn-primary {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.phase-indicator {
+  background: linear-gradient(135deg, #1e3a5f, #1e2130);
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #93c5fd;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.boardroom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.agent-card {
+  background: #1e2130;
+  border: 2px solid;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  color: #fff;
+}
+
+.agent-emoji {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.agent-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.agent-status {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  font-style: italic;
+  flex-shrink: 0;
+}
+
+.agent-body {
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+  min-height: 60px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  flex: 1;
+}
+
+.approval-section {
+  background: #1e2130;
+  border: 2px solid #f59e0b;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.approval-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #fcd34d;
+}
+
+.approval-section p {
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+}
+
+.approval-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-approve {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-approve:hover {
+  opacity: 0.85;
+}
+
+.btn-reject {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-reject:hover {
+  opacity: 0.85;
+}
+
+.approval-confirmed {
+  color: #34d399;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.approval-rejected {
+  color: #f87171;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .boardroom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+}
