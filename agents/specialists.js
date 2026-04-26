@@ -75,7 +75,6 @@ async function streamAgentAnalysis({ agent, problem, context = '', phase, send }
     ? `Problema empresarial para análise:\n\n${problem}`
     : `Problema original:\n${problem}\n\nAnálises anteriores dos colegas:\n${context}\n\nSua análise complementar:`;
 
-  // Manual stream with for-await (no adaptive thinking on specialists)
   const response = await client.messages.create({
     model: 'claude-opus-4-7',
     max_tokens: 1024,
@@ -113,7 +112,6 @@ async function streamChairmanSummary({ problem, allAnalyses, send }) {
     model: 'claude-opus-4-7',
     max_tokens: 2048,
     stream: true,
-    thinking: { type: 'enabled', budget_tokens: 5000 },
     system: CHAIRMAN.summaryPrompt,
     messages: [{ role: 'user', content: userMessage }],
   });
